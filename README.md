@@ -1,7 +1,13 @@
+*ELIOT HACK*
+=======================
+
+Deprecated means it doesn't know how to detect the Raspberry Pi 4b. And even the way it detected the platform is deprecated. 
+So, rather than fixing deprecated code, we hack it for our needs. Simple, effective, ugly, dangerous, practical.
+
 *DEPRECATED LIBRARY* Adafruit Python DHT Sensor Library
 =======================
 
-his library has been deprecated! We are leaving this up for historical and research purposes but archiving the repository.
+This library has been deprecated! We are leaving this up for historical and research purposes but archiving the repository.
 
 We are now only supporting the use of our CircuitPython libraries for use with Python.
 
