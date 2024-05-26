@@ -95,8 +95,8 @@ def pi_version():
     match = re.search('^Hardware\s+:\s+(\w+)$', cpuinfo,
                       flags=re.MULTILINE | re.IGNORECASE)
     if not match:
-        # Couldn't find the hardware, assume it isn't a pi.
-        return None
+        # /proc/cpuinfo on Debian 12/Bookworm doesn't even have a Hardware: line
+        return 4 # BUGBUG: awful hack (Eliot)
     if match.group(1) == 'BCM2708':
         # Pi 1
         return 1
@@ -109,6 +109,9 @@ def pi_version():
     elif match.group(1) == 'BCM2837':
         # Pi 3b+
         return 3
+    elif match.group(1) == 'BCM2711':
+        # Pi 4B (this would work if /proc/cpuinfo format hadn't completely changed)
+        return 4
     else:
         # Something else, not a pi.
         return None
