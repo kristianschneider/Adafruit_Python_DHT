@@ -62,8 +62,8 @@ def get_platform():
     else:
     #raise RuntimeError('Unknown platform.')
     #my personal changes to the code, do it only if you are using a RPi 2, 3 or 4.
-    from . import Raspberry_Pi_2
-    return Raspberry_Pi_2
+        from . import Raspberry_Pi_2
+        return Raspberry_Pi_2
 
 def read(sensor, pin, platform=None):
     """Read DHT sensor of specified sensor type (DHT11, DHT22, or AM2302) on
