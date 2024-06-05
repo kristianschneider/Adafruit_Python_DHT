@@ -72,6 +72,12 @@ elif platform == platform_detect.RASPBERRY_PI:
                                     ["source/_Raspberry_Pi_2_Driver.c", "source/common_dht_read.c", "source/Raspberry_Pi_2/pi_2_dht_read.c", "source/Raspberry_Pi_2/pi_2_mmio.c"],
                                     libraries=['rt'],
                                     extra_compile_args=['-std=gnu99']))
+    elif pi_version == 4:
+        extensions.append(Extension("Adafruit_DHT.Raspberry_Pi_2_Driver",
+                                    ["source/_Raspberry_Pi_2_Driver.c", "source/common_dht_read.c", "source/Raspberry_Pi_2/pi_2_dht_read.c", "source/Raspberry_Pi_2/pi_2_mmio.c"],
+                                    libraries=['rt'],
+                                    extra_compile_args=['-std=gnu99']))
+                                                                    
     else:
         extensions.append(Extension("Adafruit_DHT.Raspberry_Pi_Driver",
                                     ["source/_Raspberry_Pi_Driver.c", "source/common_dht_read.c", "source/Raspberry_Pi/pi_dht_read.c", "source/Raspberry_Pi/pi_mmio.c"],
