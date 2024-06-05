@@ -55,7 +55,8 @@ def get_platform():
             from . import Raspberry_Pi_2
             return Raspberry_Pi_2
         else:
-            raise RuntimeError('No driver for detected Raspberry Pi version available!')
+            from . import Raspberry_Pi_2
+            return Raspberry_Pi_2
     elif plat == platform_detect.BEAGLEBONE_BLACK:
         from . import Beaglebone_Black
         return Beaglebone_Black
