@@ -73,7 +73,10 @@ elif platform == platform_detect.RASPBERRY_PI:
                                     libraries=['rt'],
                                     extra_compile_args=['-std=gnu99']))
     else:
-        raise RuntimeError('Detected Pi version that has no appropriate driver available.')
+        extensions.append(Extension("Adafruit_DHT.Raspberry_Pi_Driver",
+                                    ["source/_Raspberry_Pi_Driver.c", "source/common_dht_read.c", "source/Raspberry_Pi/pi_dht_read.c", "source/Raspberry_Pi/pi_mmio.c"],
+                                    libraries=['rt'],
+                                    extra_compile_args=['-std=gnu99']))
 elif platform == platform_detect.BEAGLEBONE_BLACK:
     extensions.append(Extension("Adafruit_DHT.Beaglebone_Black_Driver",
                                 ["source/_Beaglebone_Black_Driver.c", "source/common_dht_read.c", "source/Beaglebone_Black/bbb_dht_read.c", "source/Beaglebone_Black/bbb_mmio.c"],
