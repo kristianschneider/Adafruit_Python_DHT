@@ -61,7 +61,6 @@ def get_platform():
         return Beaglebone_Black
     else:
     #raise RuntimeError('Unknown platform.')
-    """Use Pi 2 driver even though running on Pi 4"""
     #my personal changes to the code, do it only if you are using a RPi 2, 3 or 4.
     from . import Raspberry_Pi_2
     return Raspberry_Pi_2
